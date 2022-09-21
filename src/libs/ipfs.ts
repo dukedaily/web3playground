@@ -6,15 +6,22 @@ import {
 } from 'libs/localstorage'
 import { timeoutPromise } from 'libs/utils'
 import { File } from 'components/Files/types'
+require('dotenv').config()
 
 const IPFS_RESOLVER = 'https://ipfs.io/ipfs/'
 const PINATA_RESOLVER = 'https://gateway.pinata.cloud/ipfs/'
 
 // I know that I am exposing secret keys but it is in purpose!
 export async function upload() {
-  const pinataAPIKey = '41d9d533daec1ccef42a'
+  // const pinataAPIKey = '41d9d533daec1ccef42a'
+  // const pinataSecretAPIKey = '1721c608c98314394260fb427e6f7ba6ace1e1876ebc4b645387f95bb77eacf0'
+
+  // const pinataAPIKey = process.env.pinataAPIKey || ''
+  // const pinataSecretAPIKey = process.env.pinataAPIKey || ''
+
+  const pinataAPIKey = 'b0450654b560b1db47cb'
   const pinataSecretAPIKey =
-    '1721c608c98314394260fb427e6f7ba6ace1e1876ebc4b645387f95bb77eacf0'
+    '4afc2d10236c41d02a1466c451e8fa482b00eb86a0eee317fae85cb49c2680e3'
 
   const url = `https://api.pinata.cloud/pinning/pinFileToIPFS`
 
